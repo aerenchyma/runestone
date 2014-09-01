@@ -151,13 +151,13 @@ def allbooks(options):
     if 'all' in options.allbooks:
         opts['all'] = True
 
-    #options.thinkcspy = opts
-    #options.pythonds = opts
-    #options.overview = opts
+    options.thinkcspy = opts
+    options.pythonds = opts
+    options.overview = opts
 
-    #thinkcspy(options)
-    #pythonds(options)
+    thinkcspy(options)
+    pythonds(options)
     pip(options)
-    #overview(options)
+    overview(options)
 
 
