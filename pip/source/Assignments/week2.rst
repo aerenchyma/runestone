@@ -13,15 +13,13 @@
 
 
 Week 2: ends Sunday, September 14
-=======================
+=================================
 
 For this week, you have the following graded activities:
 
 #. Save answers to the exercises in Problem Set 2:
    :ref:`Problem Set 2 <problem_set_2>` 
 
-
-------------------------
 
 .. actex:: test_framework_2
    :nopre:
@@ -91,12 +89,20 @@ For this week, you have the following graded activities:
            print('Failed test %d: %s\n\texpected type %s\n\tgot %s' % (i, feedback, expected, type(actual)))
            return False
 
-    .. actex:: addl_functions_2
-    	:hidecode:
-    	:nopre:
+.. actex:: addl_functions_2
+    :nopre:
+    :hidecode:
 
-    	def add_lengths(s1,s2):
-    		return len(s1) + len(s2)
+    def add_lengths(s1,s2):
+        return len(s1) + len(s2)
+
+    def random_digit():
+        import random
+        return random.choice([0,1,2,3,4,5,6,7,8,9])
+
+    def square(x):
+        return x**2
+
 
 .. _problem_set_2:
 
@@ -106,7 +112,7 @@ Problem Set
 
 **Instructions:** Write the code you want to save in the provided boxes, and click **save** for each one. The last code you have saved for each one by the deadline is what will be graded.
 
-1. Assign the variable ``fl`` the value of the first element of the string value in ``original_str``. Assign the variable ``last_l`` the value of the last element of the string value in `` original_str ``.
+1. Assign the variable ``fl`` the value of the first element of the string value in ``original_str``. Assign the variable ``last_l`` the value of the last element of the string value in ``original_str``.
 
    .. actex:: ps_2_1
       :include: test_framework_2
@@ -123,77 +129,112 @@ Problem Set
 
 #. See comments for instructions.
 
-	.. actex:: ps_2_2
-		:include: test_framework_2
+    .. actex:: ps_2_2
+        :include: test_framework_2
 
-		sent = """
-He took his vorpal sword in hand:
-Long time the manxome foe he sought
-So rested he by the Tumtum tree,
-And stood awhile in thought.
-- Jabberwocky, Lewis Carroll (1832-1898)"""
+        sent = """
+        He took his vorpal sword in hand:
+        Long time the manxome foe he sought
+        So rested he by the Tumtum tree,
+        And stood awhile in thought.
+        - Jabberwocky, Lewis Carroll (1832-1898)"""
 
-		short_sent = """
-		So much depends
-		on
-		"""
+        short_sent = """
+        So much depends
+        on
+        """
 
-		# How long (how many characters) is the string in the variable sent?
-		# Write code to assign the length of the string to a variable called len_of_sent.
-
-
-		# How long is the string in the variable short_sent?
-		# Write code to assign the length of that string to a variable called short_len.
+        # How long (how many characters) is the string in the variable sent?
+        # Write code to assign the length of the string to a variable called len_of_sent.
 
 
-		# Print out the value of short_len (and len_of_sent, if you want!) so you can see it. 
+        # How long is the string in the variable short_sent?
+        # Write code to assign the length of that string to a variable called short_len.
 
 
-		# Write a comment below this line to explain why these values are larger than you might expect. Why is the length of short_sent longer than 15 characters?
+        # Print out the value of short_len (and len_of_sent, if you want!) so you can see it. 
 
 
-		# Assign the index of the first 'v' in the value of the variable sent TO a variable called index_of_v. (Hint: we saw a function built into Python that can help with this)
+        # Write a comment below this line to explain why these values are larger than you might expect. Why is the length of short_sent longer than 15 characters?
 
-		====
 
-		print "\n\n---\n"
-		testEqual(len_of_sent,len(sent))
-		testEqual(short_len,len(short_sent))
-		testEqual(index_of_v, sent.find('v'))
+        # Assign the index of the first 'v' in the value of the variable sent TO a variable called index_of_v. (Hint: we saw a function built into Python that can help with this)
+
+        ====
+
+        print "\n\n---\n"
+        testEqual(len_of_sent,len(sent))
+        testEqual(short_len,len(short_sent))
+        testEqual(index_of_v, sent.find('v'))
 
 
 
 #. See comments for instructions again. (Keep in mind: All ordinal numbers in *instructions*, like "third" or "fifth" refer to the way HUMANS count. How do you write code to find the right things?)
 
-	.. actex:: ps_2_3
-		:include: test_framework_2
+    .. actex:: ps_2_3
+        :include: test_framework_2
 
-		num_lst = [4,16,25,9,100,12,13]
-		mixed_bag = ["hi", 4,6,8, 92.4, "see ya", "23", 23]
+        num_lst = [4,16,25,9,100,12,13]
+        mixed_bag = ["hi", 4,6,8, 92.4, "see ya", "23", 23]
 
-		# Assign the value of the third element of num_lst to a variable called third_elem
+        # Assign the value of the third element of num_lst to a variable called third_elem
 
-		# Assign the value of the sixth element of num_lst to a variable called elem_sixth
+        # Assign the value of the sixth element of num_lst to a variable called elem_sixth
 
-		# Assign the length of num_lst to a variable called num_lst_len
+        # Assign the length of num_lst to a variable called num_lst_len
 
-		# Write a comment explaining the difference between mixed_bag[-1] and mixed_bag[-2]
-		# (you may want to print out those values so you can make sure you know what they are!)
+        # Write a comment explaining the difference between mixed_bag[-1] and mixed_bag[-2]
+        # (you may want to print out those values so you can make sure you know what they are!)
 
-		# Write code to print out the type of the third element of mixed_bag
+        # Write code to print out the type of the third element of mixed_bag
 
-		# Write code to assign the **type of the fifth element of mixed_bag** to a variable called fifth_type
+        # Write code to assign the **type of the fifth element of mixed_bag** to a variable called fifth_type
 
-		# Write code to assign the **type of the first element of mixed_bag** to a variable called another_type
+        # Write code to assign the **type of the first element of mixed_bag** to a variable called another_type
 
-		====
+        ====
 
-		print "\n\n---\n"
-		testEqual(third_elem, num_lst[2])
-		testEqual(elem_sixth, num_lst[5])
-		testEqual(num_lst_len,len(num_lst_len))
-		testEqual(fifth_type,type(mixed_bag[4]))
-		testEqual(another_type, type(mixed_bag[0]))
+        print "\n\n---\n"
+        testEqual(third_elem, num_lst[2])
+        testEqual(elem_sixth, num_lst[5])
+        testEqual(num_lst_len,len(num_lst_len))
+        testEqual(fifth_type,type(mixed_bag[4]))
+        testEqual(another_type, type(mixed_bag[0]))
 
-#. 
+
+#. There is a function we are giving you for this problem set that takes two strings, and returns the length of both of those strings added together, called ``add_lengths``. We are also including the functions from Problem Set 1 called ``random_digit`` and ``square`` in this problem set. 
+
+Now, take a look at the following code before answering the next few questions:
+
+    .. actex:: ps_2_disp_1
+        :include: addl_functions_2
+
+        new_str = "'Twas brillig"
+
+        y = add_lengths("receipt","receive")
+
+        x = random_digit()
+
+        z = new_str.find('b')
+
+        l = new_str.find("'")
+
+        # notice that this line of code is made up of a lot of different expressions
+        fin_value = square(len(new_str)) + (z - l) + (x * random_digit())
+
+The following questions are based on that code. 
+
+    .. mchoicemf:: ps2_q_1
+       :answer_a: string
+       :answer_b: list
+       :answer_c: function
+       :answer_d: integer
+       :correct: d
+       :feedback_a: Strings are inputs to the function add_lengths, but that is not the type of the variable y once this code is run.
+       :feedback_b: There are no lists in this code.
+       :feedback_c: A function is being called in the expression that is evaluated, whose value is stored in the variable y. But the variable y does not end up holding a function. Instead, it holds an evaluated expression which ends up to be a different type.
+       :feedback_d: Yes! The function add_lengths is evaluated with the inputs as seen above, and its return value is an integer. The return value of the function is stored in the variable y, so the type of the value in y is an integer.
+
+       What type is the variable ``y`` once this code is run?
+
 
