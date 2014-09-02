@@ -204,9 +204,9 @@ Problem Set
 
 #. There is a function we are giving you for this problem set that takes two strings, and returns the length of both of those strings added together, called ``add_lengths``. We are also including the functions from Problem Set 1 called ``random_digit`` and ``square`` in this problem set. 
 
-Now, take a look at the following code before answering the next few questions:
+    Now, take a look at the following code and related questions, in this code window.
 
-    .. actex:: ps_2_disp_1
+    .. actex:: ps_2_4
         :include: addl_functions_2
 
         new_str = "'Twas brillig"
@@ -222,19 +222,35 @@ Now, take a look at the following code before answering the next few questions:
         # notice that this line of code is made up of a lot of different expressions
         fin_value = square(len(new_str)) + (z - l) + (x * random_digit())
 
-The following questions are based on that code. 
-
-    .. mchoicemf:: ps2_q_1
-       :answer_a: string
-       :answer_b: list
-       :answer_c: function
-       :answer_d: integer
-       :correct: d
-       :feedback_a: Strings are inputs to the function add_lengths, but that is not the type of the variable y once this code is run.
-       :feedback_b: There are no lists in this code.
-       :feedback_c: A function is being called in the expression that is evaluated, whose value is stored in the variable y. But the variable y does not end up holding a function. Instead, it holds an evaluated expression which ends up to be a different type.
-       :feedback_d: Yes! The function add_lengths is evaluated with the inputs as seen above, and its return value is an integer. The return value of the function is stored in the variable y, so the type of the value in y is an integer.
-
-       What type is the variable ``y`` once this code is run?
+        # DO NOT CHANGE ANY CODE ABOVE THIS LINE
+        # But below here, putting print statements and running the code may help you!
 
 
+        # The following questions are based on that code. All refer to the types of the 
+        #variables and/or expressions after the above code is run.
+
+        #####################   
+
+        # Write a comment explaining each of the following, after each question.
+        # Don't forget to save!
+
+        # What is square? 
+
+        # What type of expression is square(len(new_str))? What type will that evaluate to?
+
+        # What type is z?
+
+        # What type is l?
+
+        # What type is the expression z-l?
+
+        # What type is x?
+
+        # What is random_digit? How many inputs does it take?
+
+        # What type does the expression (x * random_digit()) evaluate to?
+
+        # Given all this information, what type will fin_value hold once all this code is run?
+
+#. 
+      
