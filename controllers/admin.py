@@ -1230,7 +1230,11 @@ def htmlsrc():
         (db.questions.base_course == db.courses.base_course) &
         (db.courses.course_name == auth.user.course_name)
          ).select(db.questions.htmlsrc).first().htmlsrc
-    return json.dumps(htmlsrc)
+    if htmlsrc:
+        return json.dumps(htmlsrc)
+    else:
+        return json.dumps({"error":"no htmlsrc could be found"})
+
 
 
 @auth.requires(lambda: verifyInstructorStatus(auth.user.course_name, auth.user), requires_login=True)
