@@ -1225,13 +1225,15 @@ def questions2rst():
 @auth.requires(lambda: verifyInstructorStatus(auth.user.course_name, auth.user), requires_login=True)
 def htmlsrc():
     acid = request.vars['acid']
-    htmlsrc = db(
+    htmlsrc_poss = db(
         (db.questions.name == acid) &
         (db.questions.base_course == db.courses.base_course) &
         (db.courses.course_name == auth.user.course_name)
-         ).select(db.questions.htmlsrc).first().htmlsrc
-    if htmlsrc:
-        return json.dumps(htmlsrc)
+         ).select(db.questions.htmlsrc).first()
+        if htmlrc_poss:
+            htmlsrc = htmlrc_poss.htmlsrc
+            if htmlsrc:
+                return json.dumps(htmlsrc)
     else:
         return json.dumps({"error":"no htmlsrc could be found"})
 
