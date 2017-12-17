@@ -1230,10 +1230,12 @@ def htmlsrc():
         (db.questions.base_course == db.courses.base_course) &
         (db.courses.course_name == auth.user.course_name)
          ).select(db.questions.htmlsrc).first()
-        if htmlrc_poss:
-            htmlsrc = htmlrc_poss.htmlsrc
-            if htmlsrc:
-                return json.dumps(htmlsrc)
+    if htmlrc_poss:
+        htmlsrc = htmlrc_poss.htmlsrc
+        if htmlsrc:
+            return json.dumps(htmlsrc)
+        else:
+            return json.dumps({"error":"no htmlsrc could be found"})
     else:
         return json.dumps({"error":"no htmlsrc could be found"})
 
